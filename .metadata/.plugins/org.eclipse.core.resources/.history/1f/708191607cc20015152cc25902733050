@@ -1,0 +1,13 @@
+package com.csii.minispring.beans.xml;
+
+import java.util.Map;
+
+public class BeanDefinitionParser {
+
+	public void parseBeanDefinitions(Map<String, Object> beanMap,
+			BeanDefinitionReader reader) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

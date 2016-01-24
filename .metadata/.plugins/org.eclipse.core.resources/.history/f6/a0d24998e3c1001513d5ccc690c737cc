@@ -1,0 +1,6 @@
+package com.csii.minispring.utils;
+
+public abstract class BeanUtils {
+	private static final Log logger = LogFactory.getLog(BeanUtils.class);
+	public static void in
+}

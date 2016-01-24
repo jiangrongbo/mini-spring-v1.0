@@ -1,0 +1,11 @@
+package com.csii.minispring.utils;
+
+import org.junit.Test;
+
+public class StringUtilsTest {
+
+	@Test
+	public void testIndexOf() {
+
+	}
+}

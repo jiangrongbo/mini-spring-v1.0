@@ -1,0 +1,7 @@
+package com.csii.minispring.utils;
+
+public class BeanUtilsTest {
+
+	@Test
+	
+}

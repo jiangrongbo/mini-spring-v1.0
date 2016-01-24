@@ -1,0 +1,11 @@
+package com.csii.minispring.context;
+
+import org.junit.Test;
+
+public class ClassPathXmlApplicationContextTest {
+	@Test
+	public void testStartIoc() {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:beans.xml");
+		
+	}
+}

@@ -1,0 +1,10 @@
+package com.csii.test.pojo;
+
+public class Singleton {
+	private Singleton instance = null;
+	private Singleton() {
+
+	}
+	public static 
+	
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+	<bean id="test" class="com.csii.test.pojo.Person">
+		<property name="name" value="Jack"/>
+	</bean>
+	
+</beans>

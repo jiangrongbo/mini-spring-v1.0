@@ -1,0 +1,15 @@
+package com.csii.test.main;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import com.csii.minispring.io.ClassPathResource;
+import com.csii.minispring.io.Resource;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		Resource location = new ClassPathResource("classpath:resource/beans.xml");
+		InputStream stream = location.getInputStream();
+		System.out.println(stream);
+	}
+}

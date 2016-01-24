@@ -1,0 +1,9 @@
+package com.csii.minispring.bean;
+
+public class BeanDefinition {
+	private String id;
+	private String className;
+	
+	private 
+	
+}

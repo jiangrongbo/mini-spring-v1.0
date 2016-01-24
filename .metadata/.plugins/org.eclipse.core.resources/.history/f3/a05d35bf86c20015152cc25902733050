@@ -1,0 +1,28 @@
+package com.csii.minispring.utils;
+
+import org.junit.Test;
+
+public class StringUtilsTest {
+
+	@Test
+	public void testIndexOf() {
+		String path = "classpath:resource/file";
+
+		int prefixIndex = path.indexOf(":");
+		String prefix = "";
+		if (prefixIndex != -1) {
+			prefix = path.substring(0, prefixIndex + 1);
+
+			System.out.println(prefix);
+			path = path.substring(prefixIndex + 1);
+
+			System.out.println(path);
+		}
+	}
+
+	@Test
+	public void testProp2SetMethodName() {
+		String prop = "name";
+		System.out.println(StringUtils.prop2SetMethodName(prop));//
+	}
+}

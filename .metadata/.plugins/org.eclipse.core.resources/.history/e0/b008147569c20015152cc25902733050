@@ -1,0 +1,46 @@
+package com.csii.minispring.beans.xml;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import com.csii.minispring.io.Resource;
+
+public class BeanDefinitionParser {
+	private Resource configResource;
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public BeanDefinitionParser(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public void parseBeanDefiniton() {
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		
+		DocumentBuilder dBuilder;
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nodeList = doc.getElementsByTagName("Employee");
+            //now XML is loaded as Document in memory, lets convert it to Object List
+            List<Employee> empList = new ArrayList<Employee>();
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                empList.add(getEmployee(nodeList.item(i)));
+            }
+            //lets print Employee list information
+            for (Employee emp : empList) {
+                System.out.println(emp.toString());
+            }
+        } catch (SAXException | ParserConfigurationException | IOException e1) {
+            e1.printStackTrace();
+        }
+	}
+
+}

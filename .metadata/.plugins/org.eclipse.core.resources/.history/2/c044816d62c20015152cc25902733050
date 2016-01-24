@@ -1,0 +1,17 @@
+package com.csii.minispring.context;
+
+import com.csii.minispring.io.Resource;
+
+public class ClassPathXmlApplicationContext {
+	private Resource configResource;
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.csii.minispring.context;
+
+import org.junit.Test;
+
+public class ClassPathXmlApplicationContextTest {
+	@Test
+	public testStartIoc() {
+
+	}
+}

@@ -1,0 +1,5 @@
+package com.csii.minispring.io;
+
+public interface Resource {
+
+}

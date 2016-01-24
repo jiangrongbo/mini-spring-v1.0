@@ -1,0 +1,5 @@
+package com.csii.test.pojo;
+
+public class Singleton {
+	
+}

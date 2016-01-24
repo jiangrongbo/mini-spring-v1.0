@@ -1,0 +1,18 @@
+package com.csii.minispring.context;
+
+import org.junit.Test;
+
+import com.csii.test.pojo.Person;
+
+public class ClassPathXmlApplicationContextTest {
+	@Test
+	public void testStartIoc() {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:beans.xml");
+		Person person1 = (Person) context.getBean("person1");
+		System.out.println(person1.getName());
+		
+		Person person1 = (Person) context.getBean("person2");
+		System.out.println(person1.getName());
+		
+	}
+}

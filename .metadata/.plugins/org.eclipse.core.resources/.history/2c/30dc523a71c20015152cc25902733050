@@ -1,0 +1,5 @@
+package com.csii.minispring.context;
+
+public class ClassPathXmlApplicationContextTest {
+
+}

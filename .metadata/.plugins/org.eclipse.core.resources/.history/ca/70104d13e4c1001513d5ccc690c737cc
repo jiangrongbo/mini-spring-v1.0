@@ -1,0 +1,9 @@
+package com.csii.minispring.utils;
+
+public abstract class AssertUtils {
+
+	public static boolean notNull(Object object, String message) {
+		
+	}
+
+}

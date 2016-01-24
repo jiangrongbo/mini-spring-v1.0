@@ -1,0 +1,17 @@
+package com.csii.minispring.utils;
+
+public abstract class AssertUtils {
+
+	/**
+	 * 
+	 * @param object
+	 *            the object you want to check.
+	 * @param msg
+	 */
+	public static void notNull(Object object, String msg) {
+		if (object == null) {
+			throw new IllegalArgumentException(msg);
+		}
+	}
+
+}

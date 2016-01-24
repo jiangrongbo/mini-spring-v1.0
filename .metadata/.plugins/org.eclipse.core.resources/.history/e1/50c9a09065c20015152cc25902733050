@@ -1,0 +1,11 @@
+package com.csii.minispring.beans.xml;
+
+import com.csii.minispring.io.Resource;
+
+public class BeanDefinitionParser {
+
+	public void parseBeanDefiniton(Resource configResource) {
+		
+	}
+
+}

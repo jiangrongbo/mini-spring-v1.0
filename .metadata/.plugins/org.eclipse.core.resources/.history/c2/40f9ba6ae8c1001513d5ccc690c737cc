@@ -1,0 +1,12 @@
+package com.csii.minispring.utils;
+
+import java.lang.reflect.Constructor;
+
+public class ReflectionUtils {
+
+	public static void makeAccessible(Constructor ctor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

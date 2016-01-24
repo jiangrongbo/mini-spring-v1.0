@@ -1,0 +1,8 @@
+package com.csii.minispring.context;
+
+public class ClassPathXmlApplicationContextTest {
+	@Test
+	public testStartIoc() {
+
+	}
+}

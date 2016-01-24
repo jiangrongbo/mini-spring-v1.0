@@ -1,0 +1,18 @@
+package com.csii.minispring.exceptions;
+
+public class BeansException extends RuntimeException {
+
+	public BeansException(String msg) {
+		super(msg);
+	}
+
+	public BeansException(String msg, Throwable cause) {
+		super(msg, cause);
+	}
+
+	@Override
+	public String getMessage() {
+		return "bean exception message:" + super.getMessage();
+	}
+
+}

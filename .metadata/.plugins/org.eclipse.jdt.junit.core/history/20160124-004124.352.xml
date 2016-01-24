@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClassPathResourceTest.testClassPathResource" project="mini-spring-v1.0" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="testClassPathResource" classname="com.csii.minispring.utils.ClassPathResourceTest" time="39.016"/>
+</testrun>

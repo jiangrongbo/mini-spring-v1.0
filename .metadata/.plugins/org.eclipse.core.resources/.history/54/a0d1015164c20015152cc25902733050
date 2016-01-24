@@ -1,0 +1,7 @@
+package com.csii.minispring.beans.xml;
+
+public class BeanDefinitionReader {
+	protected int doLoadBeanDefinitions(InputSource inputSource, Resource resource){
+		
+	}
+}

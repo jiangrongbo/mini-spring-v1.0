@@ -1,0 +1,51 @@
+package com.csii.minispring.beans.xml;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.csii.minispring.beans.BeanDefinition;
+import com.csii.minispring.beans.Property;
+import com.csii.minispring.utils.BeanUtils;
+
+public class BeanDefinitionParser {
+	BeanDefinitionReader reader = null;
+	Map<String, Object> beanMap = null;
+
+	public void parseBeanDefinitions(Map<String, Object> beanMap,
+			BeanDefinitionReader reader) {
+		this.beanMap = beanMap;
+		this.reader = reader;
+		doParseBeanDefinition();
+	}
+
+	private void doParseBeanDefinition() {
+		Map beanDefinitionMap = reader.getBeanDefinitionMap();
+		Set<String> beanNameSet = beanDefinitionMap.keySet();
+
+		for (String beanName : beanNameSet) {
+			BeanDefinition beanDefiniton = (BeanDefinition) beanDefinitionMap
+					.get(beanName);
+			initializeBean(beanDefiniton);
+		}
+	}
+
+	private void initializeBean(BeanDefinition beanDefiniton) {
+		String beanId = beanDefiniton.getId();
+		String className = beanDefiniton.getClassName();
+		List<Property> props = beanDefiniton.getProperties();
+
+		try {
+			Class beanClazz = Class.forName(className);
+			Object bean = BeanUtils.instantiateClass(beanClazz);
+			for (Property prop : props) {
+				String propName = prop.getPropName();
+				
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+}

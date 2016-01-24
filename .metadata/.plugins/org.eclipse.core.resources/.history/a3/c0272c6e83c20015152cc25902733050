@@ -1,0 +1,36 @@
+package com.csii.minispring.beans.xml;
+
+import java.util.Map;
+import java.util.Set;
+
+import com.csii.minispring.beans.BeanDefinition;
+
+public class BeanDefinitionParser {
+	BeanDefinitionReader reader = null;
+	Map<String, Object> beanMap = null;
+
+	public void parseBeanDefinitions(Map<String, Object> beanMap,
+			BeanDefinitionReader reader) {
+		this.beanMap = beanMap;
+		this.reader = reader;
+		doParseBeanDefinition();
+	}
+
+	private void doParseBeanDefinition() {
+		Map beanDefinitionMap = reader.getBeanDefinitionMap();
+		Set<String> beanNameSet = beanDefinitionMap.keySet();
+
+		for (String beanName : beanNameSet) {
+			BeanDefinition beanDefiniton = (BeanDefinition) beanDefinitionMap.get(beanName);
+			initializeBean(beanDefiniton);
+		}
+	}
+
+	private void initializeBean(BeanDefinition beanDefiniton) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

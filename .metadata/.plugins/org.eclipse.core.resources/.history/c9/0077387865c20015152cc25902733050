@@ -1,0 +1,9 @@
+package com.csii.minispring.beans.xml;
+
+public class BeanDefinitionParser {
+
+	public void parseBeanDefiniton() {
+
+	}
+
+}

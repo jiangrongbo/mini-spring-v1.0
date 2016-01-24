@@ -1,0 +1,3 @@
+package com.csii.minispring.beans.xml;
+
+public abstract class AssertUtils {

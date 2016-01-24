@@ -1,0 +1,10 @@
+package com.csii.minispring.beans.xml;
+
+public class BeanDefinitionParser {
+
+	public void parseBeanDefinitions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

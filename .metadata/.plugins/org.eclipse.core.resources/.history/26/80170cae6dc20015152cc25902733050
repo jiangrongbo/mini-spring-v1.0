@@ -1,0 +1,82 @@
+package com.csii.minispring.beans.xml;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import com.csii.minispring.beans.BeanDefinition;
+import com.csii.minispring.beans.Property;
+import com.csii.minispring.io.Resource;
+
+public class BeanDefinitionParser {
+	private Resource configResource;
+	private Map<String, BeanDefinition> beanDefinitionMap;
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public BeanDefinitionParser(Resource configResource) {
+		this.configResource = configResource;
+		this.beanDefinitionMap = new HashMap();
+	}
+
+	public void parseBeanDefiniton() {
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+
+		DocumentBuilder dBuilder;
+		try {
+			dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(configResource.getFile());
+			doc.getDocumentElement().normalize();
+			NodeList nodeList = doc.getElementsByTagName("bean");
+
+			for (int i = 0; i < nodeList.getLength(); i++) {
+				Node node = nodeList.item(i);
+				doLoadBeanDefinition(node);
+
+			}
+		} catch (SAXException | ParserConfigurationException | IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	public BeanDefinition doLoadBeanDefinition(Node node) {
+		BeanDefinition beanDefinition = new BeanDefinition();
+		if (node.getNodeType() == Node.ELEMENT_NODE) {
+			Element element = (Element) node;
+			beanDefinition.setId(element.getAttribute("id"));
+			beanDefinition.setClassName(element.getAttribute("class"));
+			beanDefinition.setProperties(getProperties(element));
+		}
+		return beanDefinition;
+
+	}
+
+	private List getProperties(Element ele) {
+		
+		List<Property> props = new ArrayList<Property>();
+		
+		NodeList nodeList = ele.getElementsByTagName("property");
+		
+		
+		
+		return null;
+	}
+}

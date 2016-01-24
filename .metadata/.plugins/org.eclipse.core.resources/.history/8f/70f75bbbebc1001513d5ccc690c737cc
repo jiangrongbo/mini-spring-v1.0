@@ -1,0 +1,19 @@
+package com.csii.minispring.io;
+
+public interface Resource {
+	boolean exists();
+
+	boolean isReadable();
+
+	boolean isOpen();
+
+	File getFile() throws IOException;
+
+	long lastModified() throws IOException;
+
+	Resource createRelative(String relativePath) throws IOException;
+
+	String getFilename();
+
+	String getDescription();
+}

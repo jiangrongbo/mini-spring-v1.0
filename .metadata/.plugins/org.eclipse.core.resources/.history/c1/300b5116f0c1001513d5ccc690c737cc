@@ -1,0 +1,18 @@
+package com.csii.minispring.utils;
+
+import java.io.File;
+
+import org.junit.Test;
+
+import com.csii.minispring.io.ClassPathResource;
+import com.csii.minispring.io.Resource;
+
+public class ClassPathResourceTest {
+
+	@Test
+	public void testClassPathResource() {
+		Resource location = new ClassPathResource("classpath:resource/beans.xml");
+		
+		File file = location.getFile();
+	}
+}

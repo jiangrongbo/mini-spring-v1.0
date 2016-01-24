@@ -1,0 +1,593 @@
+<projects>
+  <project>
+    <id>jdf-jboss-kitchensink-html5-mobile</id>
+    <name>jboss-kitchensink-html5-mobile</name>
+    <category>Mobile Applications</category>
+    <shortDescription>kitchensink-html5-mobile</shortDescription>
+    <description>An AeroGear and Java EE 6 HTML5 mobile web application for use with JBoss.</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/wfk-2.7.0.Final/jboss-kitchensink-html5-mobile.zip</url>
+    <size>572260</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6.x, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.4.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-tools:pom:2.4.0-redhat-2,org.jboss.bom:jboss-javaee-6.0-with-hibernate:pom:1.0.4.Final-redhat-9</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jboss-kitchensink</id>
+    <name>jboss-kitchensink</name>
+    <included-projects>jboss-kitchensink</included-projects>
+    <category>Web Applications</category>
+    <shortDescription>kitchensink</shortDescription>
+    <description>
+      This is your project! It's a sample, deployable Maven 3 project to help you get your foot in the door developing with Java EE 6 on JBoss Enterprise Application Platform 6 or JBoss Application Server 7.1. This project is setup to allow you to create a
+      compliant Java EE 6 application using JSF 2.0, CDI 1.0, EJB 3.1, JPA 2.0 and Bean Validation 1.0. It includes a persistence unit and some sample persistence and transaction code to help you get your feet wet with database access in enterprise Java.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-kitchensink.zip</url>
+    <size>92217</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <!-- <welcome type="cheatsheets" url="/jboss-kitchensink/.cheatsheet.xml"/>  -->
+    <tags>central</tags>
+    <priority>19</priority>
+    <icon path="icons/jboss.png" />
+    <essentialEnterpriseDependencies>org.jboss.bom.eap:jboss-javaee-6.0-with-tools:pom:6.2.0.GA,org.jboss.bom.eap:jboss-javaee-6.0-with-hibernate:pom:6.2.0.GA</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jdf-jboss-greeter</id>
+    <name>jboss-greeter</name>
+    <category>Web Applications</category>
+    <shortDescription>greeter</shortDescription>
+    <description>This example creates a simple greeting application to demonstrate the use of CDI 1.0, JPA 2.0, JTA 1.1, EJB 3.1 and JSF 2.0 in JBoss Enterprise Application Platform 6 or JBoss AS 7.1</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-greeter.zip</url>
+    <size>24307</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <priority>18</priority>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.1.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.spec:jboss-javaee-6.0:pom:3.0.2.Final-redhat-7</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jboss-helloworld</id>
+    <name>jboss-helloworld</name>
+    <included-projects>jboss-helloworld</included-projects>
+    <category>Web Applications</category>
+    <included-projects>jboss-helloworld</included-projects>
+    <shortDescription>helloworld</shortDescription>
+    <description>
+      This example demonstrates the use of CDI 1.0 and Servlet 3 in JBoss Enterprise Application Platform 6 or JBoss Application Server 7.1. The example can be deployed using Maven from the command line or from Eclipse using JBoss Tools.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-helloworld.zip</url>
+    <size>12124</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <!--welcome type="cheatsheets" url="/jboss-helloworld/.cheatsheet.xml"/-->
+    <tags>central</tags>
+    <priority>17</priority>
+    <icon path="icons/jboss.png" />
+    <essentialEnterpriseDependencies>org.jboss.spec:jboss-javaee-6.0:pom:3.0.2.Final-redhat-7</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <id>jboss-kitchensink-rf</id>
+    <name>jboss-kitchensink-rf</name>
+    <included-projects>jboss-kitchensink-rf</included-projects>
+    <category>Web Applications</category>
+    <shortDescription>kitchensink-rf</shortDescription>
+    <description>
+      This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with Java EE 6 on JBoss Enterprise Application Platform 6 or JBoss AS 7. This project is setup to allow you to create a compliant Java EE
+      6 application using JSF 2.0 with RichFaces 4, CDI 1.0, EJB 3.1, JPA 2.0 and Bean Validation 1.0. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/wfk-2.7.0.Final/jboss-helloworld-rf.zip</url>
+    <size>17265</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <!-- <welcome type="cheatsheets" url="/jboss-kitchensink/.cheatsheet.xml"/>  -->
+    <tags>central</tags>
+    <priority>16</priority>
+    <icon path="icons/jboss.png" />
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-tools:pom:2.4.0-redhat-2,org.jboss.bom:jboss-javaee-6.0-with-hibernate:pom:1.0.4.Final-redhat-9,org.jboss.bom.wfk:jboss-javaee-6.0-with-richfaces:pom:2.4.0-redhat-2,</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jboss-helloworld-rs</id>
+    <name>jboss-helloworld-rs</name>
+    <included-projects>jboss-helloworld-rs</included-projects>
+    <category>Back-end Applications</category>
+    <shortDescription>helloworld-rs</shortDescription>
+    <description>
+      This example creates an Helloworld JAX-RS Web service that uses CDI 1.0 and JAX-RS in JBoss Enterprise Application Platform 6 or JBoss AS 7.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-helloworld-rs.zip</url>
+    <size>15941</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <tags>central</tags>
+    <priority>17</priority>
+    <icon path="icons/jboss.png" />
+    <essentialEnterpriseDependencies>org.jboss.spec:jboss-javaee-6.0:pom:3.0.2.Final-redhat-7</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <id>jboss-jax-rs-client</id>
+    <name>jboss-jax-rs-client</name>
+    <included-projects>jboss-jax-rs-client</included-projects>
+    <category>Back-end Applications</category>
+    <shortDescription>jax-rs-client</shortDescription>
+    <description>
+      This example demonstrates an external JAX-RS RestEasy client which interacts with a JAX-RS Web service that uses CDI 1.0 and JAX-RS in JBoss Enterprise Application Platform 6 or JBoss AS 7. Requires the helloworld-rs project to be deployed.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-jax-rs-client.zip</url>
+    <size>10279</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <!-- <welcome type="cheatsheets" url="/jboss-kitchensink/.cheatsheet.xml"/>  -->
+    <priority>16</priority>
+    <icon path="icons/jboss.png" />
+    <essentialEnterpriseDependencies>org.jboss.spec:jboss-javaee-6.0:pom:3.0.2.Final-redhat-7</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <id>jdf-jboss-helloworld-jms</id>
+    <name>jboss-helloworld-jms</name>
+    <category>Back-end Applications</category>
+    <shortDescription>helloworld-jms</shortDescription>
+    <description>This example demonstrates the use of CDI 1.0 and JMS external producer/consumer client in JBoss Enterprise Application Platform 6 or JBoss Application Server 7.1. The example can be deployed using Maven from the command line or from Eclipse using
+      JBoss Tools.</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-helloworld-jms.zip</url>
+    <size>14224</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.1.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[0.17.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 0.17.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.as:jboss-as-jms-client-bom:pom:7.3.0.Final-redhat-14</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <id>jdf-helloworld-mdb</id>
+    <name>jboss-helloworld-mdb</name>
+    <category>Back-end Applications</category>
+    <shortDescription>helloworld-mdb</shortDescription>
+    <description>Helloworld Message-Driven Bean with Servlet 3.0 as client</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-helloworld-mdb.zip</url>
+    <size>19606</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.4.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.spec:jboss-javaee-6.0:pom:3.0.2.Final-redhat-7</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <id>jdf-deltaspike-helloworld-jms</id>
+    <name>deltaspike-helloworld-jms</name>
+    <category>Back-end Applications</category>
+    <shortDescription>deltaspike-helloworld-jms</shortDescription>
+    <description>Helloworld JMS producer/consumer client with DeltaSpike property configuration</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/wfk-2.7.0.Final/jboss-deltaspike-helloworld-jms.zip</url>
+    <size>24703</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.1.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-deltaspike:pom:2.4.0-redhat-2,org.jboss.as:jboss-as-jms-client-bom:pom:7.2.1.Final-redhat-10</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jboss-numberguess</id>
+    <name>jboss-numberguess</name>
+    <included-projects>jboss-numberguess</included-projects>
+    <category>Back-end Applications</category>
+    <shortDescription>numberguess</shortDescription>
+    <description>
+      This example demonstrates the use of CDI 1.0 and JSF 2.0 in JBoss Enterprise Application Platform 6 or JBoss Application Server 7.1. The example can be deployed using Maven from the command line or from Eclipse using JBoss Tools.
+    </description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/eap-6.4.0.GA/jboss-numberguess.zip</url>
+    <size>15334</size>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature</property>
+      </fix>
+    </fixes>
+    <importType>maven</importType>
+    <importTypeDescription>The project example requires the m2e, m2e-wtp and JBoss Maven Project Examples feature.</importTypeDescription>
+    <!--welcome type="cheatsheets" url="/jboss-numberguess/.cheatsheet.xml"/-->
+    <icon path="icons/jboss.png" />
+  </project>
+
+  <project>
+    <id>wfk-kitchensink-backbone</id>
+    <name>jboss-kitchensink-backbone</name>
+    <category>Mobile Applications</category>
+    <shortDescription>kitchensink-backbone</shortDescription>
+    <description>A Backbone.js and Java EE 6 HTML5 mobile web application for use with JBoss.</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/wfk-2.7.0.Final/jboss-kitchensink-backbone.zip</url>
+    <size>639410</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61,org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.4.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-tools:pom:2.7.0-redhat-1,org.jboss.bom.eap:jboss-javaee-6.0-with-hibernate:pom:6.3.2.GA</essentialEnterpriseDependencies>
+  </project>
+
+  <project>
+    <id>jdf-jboss-kitchensink-angularjs</id>
+    <name>jboss-kitchensink-angularjs</name>
+    <category>Web Applications</category>
+    <shortDescription>kitchensink-angularjs</shortDescription>
+    <description>A starter Java EE 6 webapp project for use on JBoss EAP 6, generated from the jboss-javaee6-webapp archetype, using AngularJS for the view</description>
+    <url>http://download.jboss.org/jbosstools/examples/4.3/wfk-2.7.0.Final/jboss-kitchensink-angularjs.zip</url>
+    <size>295812</size>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <included-projects/>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61, org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6.x, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.4.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 1.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.4.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.hibernate.feature</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-tools:pom:2.4.0-redhat-2,org.jboss.bom:jboss-javaee-6.0-with-hibernate:pom:1.0.4.Final-redhat-9</essentialEnterpriseDependencies>
+  </project>
+  <project>
+    <category>Mobile Applications</category>
+    <name>contacts-mobile-basic</name>
+    <included-projects>contacts-mobile-basic-client, contacts-mobile-basic-services</included-projects>
+    <shortDescription>contacts-mobile-basic</shortDescription>
+    <description>This example contains : - contacts-mobile-basic-services : a Maven-based Java EE 6 web application, acting as a REST service back-end - contacts-mobile-basic-client : an Apache Cordova-based client project, deployed on a mobile device First, deploy
+      contacts-mobile-basic-services to a JBoss EAP 6 server, so that it exposes : http://localhost:8080/contacts-mobile-basic-services/rest/members Then, build and deploy contacts-mobile-basic-client as a Mobile device client, using JBoss Hybrid Mobile
+      Application Development Tools. This client application performs GET, PUT, POST and DELETE queries to the REST service.</description>
+    <importType>maven</importType>
+    <icon path="icons/jboss.png" />
+    <tags>central</tags>
+    <size>7340236</size>
+    <url>http://dl.bintray.com/jbosstools/examples/contacts-mobile-basic/0.0.2/contacts-mobile.zip</url>
+    <fixes>
+      <fix type="wtpruntime">
+        <property name="allowed-types">org.jboss.ide.eclipse.as.runtime.71, org.jboss.ide.eclipse.as.runtime.eap.60, org.jboss.ide.eclipse.as.runtime.eap.61,org.jboss.ide.eclipse.as.runtime.wildfly.80</property>
+        <property name="description">requires JBoss Enterprise Application Platform 6, JBoss Application Server 7.1 or WildFly 8.0</property>
+        <property name="downloadId">org.jboss.tools.runtime.core.as.711</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.core</property>
+        <property name="versions">[1.0.0,2.0.0)</property>
+        <property name="description">requires m2e &gt;= 1.0.</property>
+        <property name="connectorIds">org.eclipse.m2e.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.m2e.wtp</property>
+        <property name="versions">[0.16,2.0)</property>
+        <property name="description">requires m2e-wtp &gt;= 0.16.0.</property>
+        <property name="connectorIds">org.maven.ide.eclipse.wtp.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.jboss.tools.maven.core</property>
+        <property name="versions">[1.3.0,2.0.0)</property>
+        <property name="description">requires JBoss Maven Tools.</property>
+        <property name="connectorIds">org.jboss.tools.maven.feature,org.jboss.tools.maven.cdi.feature,org.jboss.tools.maven.jaxrs.feature</property>
+      </fix>
+      <fix type="plugin">
+        <property name="id">org.eclipse.thym.core</property>
+        <property name="versions">[0.1.0,1.0.0)</property>
+        <property name="description">requires Eclipse Hybrid Mobile Tools.</property>
+        <property name="connectorIds">org.jboss.tools.aerogear.hybrid</property>
+      </fix>
+    </fixes>
+    <essentialEnterpriseDependencies>org.jboss.bom.wfk:jboss-javaee-6.0-with-tools:pom:2.4.0-redhat-2,org.jboss.bom:jboss-javaee-6.0-with-hibernate:pom:1.0.4.Final-redhat-9</essentialEnterpriseDependencies>
+  </project>
+</projects>

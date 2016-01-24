@@ -1,0 +1,15 @@
+package com.csii.minispring.utils;
+
+import org.junit.Test;
+
+import com.csii.test.pojo.Person;
+
+public class BeanUtilsTest {
+
+	@Test
+	public void testInstantiateClass() {
+		Class personClazz = Person.class;
+		Person person = (Person) BeanUtils.instantiateClass(personClazz);
+
+	}
+}

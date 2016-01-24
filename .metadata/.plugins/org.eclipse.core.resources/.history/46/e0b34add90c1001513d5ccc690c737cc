@@ -1,0 +1,30 @@
+package com.csii.minispring.bean;
+
+public class BeanDefinition {
+	private String id;
+	private String className;
+	
+	
+	
+	
+	
+	
+	private class Property {
+		private String propsName;
+		private String propsValue;
+		public String getPropsName() {
+			return propsName;
+		}
+		public void setPropsName(String propsName) {
+			this.propsName = propsName;
+		}
+		public String getPropsValue() {
+			return propsValue;
+		}
+		public void setPropsValue(String propsValue) {
+			this.propsValue = propsValue;
+		}
+
+	}
+
+}

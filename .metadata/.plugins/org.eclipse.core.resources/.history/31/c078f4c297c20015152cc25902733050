@@ -1,0 +1,41 @@
+package com.csii.minispring.io;
+
+import java.io.IOException;
+
+public abstract class AbstractResource implements Resource {
+
+	@Override
+	public boolean exists() { 
+		try {
+			return getFile().exists();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public boolean isReadable() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isOpen() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public long lastModified() throws IOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getFilename() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+ 
+}

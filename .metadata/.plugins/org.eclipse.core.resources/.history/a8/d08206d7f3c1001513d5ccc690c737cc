@@ -1,0 +1,10 @@
+package com.csii.test.main;
+
+import com.csii.minispring.io.ClassPathResource;
+import com.csii.minispring.io.Resource;
+
+public class Main {
+	public static void main(String[] args) {
+		Resource location = new ClassPathResource("classpath:resource/beans.xml");
+	}
+}

@@ -1,0 +1,13 @@
+package com.csii.test.main;
+
+import java.io.IOException;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		/*Resource location = new ClassPathResource("classpath:resource/beans.xml");
+		InputStream stream = location.getInputStream();
+		System.out.println(stream);*/
+		
+		Thread.currentThread().getContextClassLoader().getResourceAsStream("");
+	}
+}

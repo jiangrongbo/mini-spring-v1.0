@@ -1,0 +1,6 @@
+package com.csii.test.pojo;
+
+public class Person {
+	String name;
+	
+}

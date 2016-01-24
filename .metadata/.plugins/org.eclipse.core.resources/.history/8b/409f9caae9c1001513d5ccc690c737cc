@@ -1,0 +1,18 @@
+package com.csii.test.pojo;
+
+public class Singleton {
+	private Singleton instance = null;
+
+	private Singleton() {
+
+	}
+
+	public synchronized static Singleton getInstance() {
+		if(instance == null) {
+			return new Singleton();
+		} else {
+			return 
+		}
+	}
+
+}

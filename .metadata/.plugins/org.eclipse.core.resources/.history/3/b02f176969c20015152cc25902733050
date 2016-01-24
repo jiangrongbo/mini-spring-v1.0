@@ -1,0 +1,24 @@
+package com.csii.minispring.beans.xml;
+
+import com.csii.minispring.io.Resource;
+
+public class BeanDefinitionParser {
+	private Resource configResource;
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public BeanDefinitionParser(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public void parseBeanDefiniton() {
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	}
+
+}

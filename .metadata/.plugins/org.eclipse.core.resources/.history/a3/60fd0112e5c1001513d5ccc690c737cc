@@ -1,0 +1,12 @@
+package com.csii.minispring.utils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import  com.csii.minispring.utils.AssertUtils;
+public abstract class BeanUtils {
+	private static final Log logger = LogFactory.getLog(BeanUtils.class);
+
+	public static Object instantiateClass(Class clazz) {
+		
+	}
+}

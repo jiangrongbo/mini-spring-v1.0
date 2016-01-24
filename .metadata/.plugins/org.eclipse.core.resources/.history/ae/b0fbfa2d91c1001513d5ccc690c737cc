@@ -1,0 +1,10 @@
+package com.csii.minispring.bean;
+
+public class Property {
+	private String propsName;
+	private String propsValue;
+	public String getPropsValue() {
+		return propsValue;
+	} 
+
+}

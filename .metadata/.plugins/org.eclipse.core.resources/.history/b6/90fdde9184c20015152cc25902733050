@@ -1,0 +1,32 @@
+package com.csii.minispring.beans;
+
+public class Property {
+	private String propName;
+	private String propsValue;
+	private String refOrValue;
+
+	public String getPropName() {
+		return propName;
+	}
+
+	public void setPropsName(String propsName) {
+		this.propName = propsName;
+	}
+
+	public String getPropsValue() {
+		return propsValue;
+	}
+
+	public void setPropsValue(String propsValue) {
+		this.propsValue = propsValue;
+	}
+
+	public String getRefOrValue() {
+		return refOrValue;
+	}
+
+	public void setRefOrValue(String refOrValue) {
+		this.refOrValue = refOrValue;
+	}
+	
+}

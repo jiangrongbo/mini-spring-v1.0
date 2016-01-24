@@ -1,0 +1,60 @@
+package com.csii.minispring.utils;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public abstract class StringUtils {
+
+	private static final String FOLDER_SEPARATOR = "/";
+
+
+	private static final String TOP_PATH = "..";
+
+	private static final String CURRENT_PATH = ".";
+
+	private static final char EXTENSION_SEPARATOR = '.';
+
+	public static String cleanPath(String path) {
+	
+		int prefixIndex = path.indexOf(":");
+		String prefix = "";
+		if (prefixIndex != -1) {
+			prefix = path.substring(0, prefixIndex + 1);
+			path = path.substring(prefixIndex + 1);
+		}
+
+		String[] pathArray = delimitedListToStringArray(path,
+				FOLDER_SEPARATOR);
+		List pathElements = new LinkedList();
+		int tops = 0;
+
+		for (int i = pathArray.length - 1; i >= 0; i--) {
+			if (CURRENT_PATH.equals(pathArray[i])) {
+				// Points to current directory - drop it.
+			} else if (TOP_PATH.equals(pathArray[i])) {
+				// Registering top path found.
+				tops++;
+			} else {
+				if (tops > 0) {
+					// Merging path element with corresponding to top path.
+					tops--;
+				} else {
+					// Normal path element found.
+					pathElements.add(0, pathArray[i]);
+				}
+			}
+		}
+
+		// Remaining top paths need to be retained.
+		for (int i = 0; i < tops; i++) {
+			pathElements.add(0, TOP_PATH);
+		}
+
+		return prefix + collectionToDelimitedString(pathElements, FOLDER_SEPARATOR);
+	}
+
+
+	
+
+}

@@ -1,0 +1,22 @@
+package com.csii.minispring.beans.xml;
+
+import java.util.Map;
+
+public class BeanDefinitionParser {
+	BeanDefinitionReader reader = null;
+	Map<String, Object> beanMap = null;
+	
+	public void parseBeanDefinitions(Map<String, Object> beanMap,
+			BeanDefinitionReader reader) {
+		this.beanMap = beanMap;
+		this.reader = reader; 
+		doParseBeanDefinition();
+		
+	}
+
+	private void doParseBeanDefinition() {
+		
+		
+	}
+
+}

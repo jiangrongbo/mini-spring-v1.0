@@ -1,0 +1,54 @@
+package com.csii.minispring.beans.xml;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import com.csii.minispring.io.Resource;
+
+public class BeanDefinitionParser {
+	private Resource configResource;
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public BeanDefinitionParser(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	public void parseBeanDefiniton() {
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		
+		DocumentBuilder dBuilder;
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(configResource.getFile());
+            doc.getDocumentElement().normalize();
+            NodeList nodeList = doc.getElementsByTagName("bean"); 
+           
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                empList.add(getEmployee(nodeList.item(i)));
+            }
+            //lets print Employee list information
+            for (Employee emp : empList) {
+                System.out.println(emp.toString());
+            }
+        } catch (SAXException | ParserConfigurationException | IOException e1) {
+            e1.printStackTrace();
+        }
+	}
+
+}

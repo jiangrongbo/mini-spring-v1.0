@@ -1,0 +1,41 @@
+package com.csii.minispring.context;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.csii.minispring.beans.xml.BeanDefinitionReader;
+import com.csii.minispring.io.ClassPathResource;
+import com.csii.minispring.io.Resource;
+
+public class ClassPathXmlApplicationContext {
+	private Resource configResource;
+	BeanDefinitionReader reader = null;
+	Map<String,Object> beanMap = new HashMap<String,Object>();
+
+	public ClassPathXmlApplicationContext(String configLocation) {
+		configResource = new ClassPathResource(configLocation);
+		loadBeanDefinitions();
+	}
+
+	public Resource getConfigResource() {
+		return configResource;
+	}
+
+	public void setConfigResource(Resource configResource) {
+		this.configResource = configResource;
+	}
+
+	private void loadBeanDefinitions() {
+		reader = new BeanDefinitionReader(configResource);
+		reader.readBeanDefiniton();
+	}
+
+	private void parseBeanDefinition() {
+		
+	}
+	
+	public Object getBean() {
+		
+	}
+
+}

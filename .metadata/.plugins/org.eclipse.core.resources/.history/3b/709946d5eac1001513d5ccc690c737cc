@@ -1,0 +1,49 @@
+package com.csii.minispring.utils;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.csii.minispring.exceptions.BeansException;
+
+public abstract class BeanUtils {
+	private static final Log logger = LogFactory.getLog(BeanUtils.class);
+
+	public static Object instantiateClass(Class clazz) {
+		AssertUtils.notNull(clazz, "the clazz must not be null.");
+		if (clazz.isInterface()) {
+			logger.error(arg0);
+			throw new BeansException(clazz, "Specified class is an interface");
+		}
+		try {
+			return instantiateClass(clazz.getDeclaredConstructor((Class[]) null), null);
+		} catch (NoSuchMethodException ex) {
+			throw new BeansException(clazz, "No default constructor found", ex);
+		}
+	}
+
+	public static Object instantiateClass(Constructor ctor, Object[] args)
+			throws BeansException {
+		AssertUtils.notNull(ctor, "Constructor must not be null");
+		try {
+			ReflectionUtils.makeAccessible(ctor);
+			return ctor.newInstance(args);
+		} catch (InstantiationException ex) {
+			throw new BeansException(ctor.getDeclaringClass(),
+					"Is it an abstract class?", ex);
+		} catch (IllegalAccessException ex) {
+			throw new BeansException(
+					ctor.getDeclaringClass(),
+					"Has the class definition changed? Is the constructor accessible?",
+					ex);
+		} catch (IllegalArgumentException ex) {
+			throw new BeansException(ctor.getDeclaringClass(),
+					"Illegal arguments for constructor", ex);
+		} catch (InvocationTargetException ex) {
+			throw new BeansException(ctor.getDeclaringClass(),
+					"Constructor threw exception", ex.getTargetException());
+		}
+	}
+}

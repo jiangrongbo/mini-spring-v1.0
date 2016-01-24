@@ -1,0 +1,22 @@
+package com.csii.minispring.utils;
+
+public abstract class StringUtils {
+
+	public static String cleanPath(String path) {
+
+		int prefixIndex = path.indexOf(":");
+		if (prefixIndex != -1) {
+			path = path.substring(prefixIndex + 1);
+		}
+		return path;
+	}
+	
+	public static String prop2MethodName(String prop){
+		
+		StringBuilder builder = new StringBuilder(prop);
+		sb.setCharAt(0, Character.toUpperCase(builder.charAt(0)));
+		prop = sb.toString();
+		Character.toUpperCase(prop.charAt(0)) + ;
+	}
+
+}

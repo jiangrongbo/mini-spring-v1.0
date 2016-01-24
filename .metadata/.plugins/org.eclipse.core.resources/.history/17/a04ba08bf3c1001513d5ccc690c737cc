@@ -1,0 +1,63 @@
+package com.csii.minispring.io;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+import com.csii.minispring.utils.AssertUtils;
+import com.csii.minispring.utils.ClassUtils;
+import com.csii.minispring.utils.StringUtils;
+
+public class ClassPathResource extends AbstractResource {
+	private final String path;
+
+	private ClassLoader classLoader;
+
+	private Class clazz;
+
+	public ClassPathResource(String path) {
+		this(path, (ClassLoader) null);
+	}
+
+	public ClassPathResource(String path, ClassLoader classLoader) {
+		AssertUtils.notNull(path, "Path must not be null");
+		if (path.startsWith("/")) {
+			path = path.substring(1);
+		}
+		this.path = StringUtils.cleanPath(path);
+		this.classLoader = (classLoader != null ? classLoader : ClassUtils
+				.getDefaultClassLoader());
+	}
+
+	public ClassPathResource(String path, Class clazz) {
+		AssertUtils.notNull(path, "Path must not be null");
+		this.path = StringUtils.cleanPath(path);
+		this.clazz = clazz;
+	}
+
+	public InputStream getInputStream() throws IOException {
+		InputStream is = null;
+		if (this.clazz != null) {
+			is = this.clazz.getResourceAsStream(this.path);
+		} else {
+			is = this.classLoader.getResourceAsStream(this.path);
+		}
+		if (is == null) {
+			throw new FileNotFoundException(getDescription()
+					+ " cannot be opened because it does not exist");
+		}
+		return is;
+	}
+
+	@Override
+	public File getFile() throws IOException {
+		return new File(path);
+	}
+
+	@Override
+	public String getDescription() {
+		return "class path resource [" + this.path + "]";
+	}
+
+}

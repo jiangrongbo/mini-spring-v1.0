@@ -1,0 +1,9 @@
+package com.csii.minispring.exceptions;
+
+public class BeansException extends RuntimeException {
+
+	public BeansException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

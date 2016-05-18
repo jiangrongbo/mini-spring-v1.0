@@ -1,0 +1,9 @@
+<!ELEMENT beans (
+	description?,
+	(bean)*
+)>
+
+<!ELEMENT bean (
+	description?,
+	(import | alias | bean)*
+)>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "beans.dtd">
+<beans>
+	<!-- 测试注入字面量 -->
+	<bean id="person1" class="com.csii.test.pojo.Person">
+		<property name="name" value="Jack"/>
+	</bean>
+	
+	<bean id="person2" class="com.csii.test.pojo.Person">
+		<property name="name" value="Jane"/>
+	</bean>
+	
+	<!-- 测试注入引用类型 -->
+	<bean id="company" class="com.csii.test.pojo.Company">
+		<property name="person" ref="person1"/>
+	</bean> 
+	
+ 	<!-- 
+	<bean1 id="company" class="com.csii.test.pojo.Company">
+		<property name="person" ref="person1"/>
+	</bean1>
+	 -->
+	 
+</beans>

@@ -1,0 +1,10 @@
+package com.csii.minispring.dtd;
+
+
+
+public class DtdValidateTest {
+
+	public void testValidateDtd() {
+		
+	}
+}

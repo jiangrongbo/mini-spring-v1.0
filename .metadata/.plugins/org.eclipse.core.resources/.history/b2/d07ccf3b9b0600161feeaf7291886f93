@@ -1,0 +1,17 @@
+<!ELEMENT beans (
+	description?,
+	(bean)*
+)>
+
+<!ELEMENT bean (
+	description?,
+	(property)*
+)>
+<!ATTLIST bean id CDATA #IMPLIED>
+<!ATTLIST bean class CDATA #REQUIRED>
+<!ELEMENT property 
+)>
+<!ATTLIST property name CDATA #REQUIRED>
+<!ATTLIST property ref CDATA #IMPLIED>
+<!ATTLIST property value CDATA #IMPLIED>
+

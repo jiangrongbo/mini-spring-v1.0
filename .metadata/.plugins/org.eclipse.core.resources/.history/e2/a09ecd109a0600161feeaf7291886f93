@@ -1,0 +1,40 @@
+package com.csii.minispring.dtd;
+
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.junit.Test;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import com.csii.minispring.io.ClassPathResource;
+
+
+
+public class DtdValidateTest {
+
+	@Test
+	public void testValidateDtd() {
+		
+		ClassPathResource configResource = new ClassPathResource("classpath:beans-dtd.xml");
+		
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder;
+		try {
+			dBuilder = dbFactory.newDocumentBuilder();
+			
+			Document doc = dBuilder.parse(configResource.getFile());
+			doc.getDocumentElement().normalize();
+			
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+
+		} catch (IOException e) {
+
+		}
+	}
+}

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+os,sysinfo,,,"win32",1461114714690
+arch,sysinfo,,,"x86",1461114714690
+ws,sysinfo,,,"win32",1461114714690
+locale,sysinfo,,,"zh_CN",1461114714690
+processors,sysinfo,,,"4",1461114714690
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1461114714690
+java.runtime.version,sysinfo,,,"1.8.0_11-b12",1461114714690
+java.specification.name,sysinfo,,,"Java Platform API Specification",1461114714690
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1461114714690
+java.specification.version,sysinfo,,,"1.8",1461114714690
+java.vendor,sysinfo,,,"Oracle Corporation",1461114714690
+java.version,sysinfo,,,"1.8.0_11",1461114714690
+java.vm.info,sysinfo,,,"mixed mode",1461114714690
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1461114714690
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1461114714690
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1461114714690
+java.vm.specification.version,sysinfo,,,"1.8",1461114714690
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1461114714690
+java.vm.version,sysinfo,,,"25.11-b03",1461114714690
+started,bundle,org.eclipse.jst.servlet.ui,1.1.301.v200908101600,"org.eclipse.jst.servlet.ui",1461114717312
+activated,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.AllMarkersView",1461114728064
+activated,view,org.eclipse.ui.navigator.resources,3.4.1.M20090826-0800,"org.eclipse.ui.navigator.ProjectExplorer",1461114744116
+started,bundle,org.eclipse.wst.ws.service.policy,1.0.103.v200905151848,"org.eclipse.wst.ws.service.policy",1461114744694
+started,bundle,org.eclipse.wst.command.env,1.0.408.v200903110045,"org.eclipse.wst.command.env",1461114744709
+started,bundle,org.eclipse.wst.ws,1.1.103.v200903111822,"org.eclipse.wst.ws",1461114744709

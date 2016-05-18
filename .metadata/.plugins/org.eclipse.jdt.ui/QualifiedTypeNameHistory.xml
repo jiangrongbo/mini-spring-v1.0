@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.commons.logging.LogFactory"/>
+<fullyQualifiedTypeName name="org.apache.commons.logging.Log"/>
+<fullyQualifiedTypeName name="com.csii.minispring.io.ClassPathResource"/>
+<fullyQualifiedTypeName name="org.xml.sax.ErrorHandler"/>
+</qualifiedTypeNameHistroy>

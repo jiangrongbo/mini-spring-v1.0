@@ -1,0 +1,11 @@
+<!ELEMENT beans (
+	description?,
+	(bean)*
+)>
+
+<!ELEMENT bean (
+	description?,
+	(property)*
+)>
+
+<!ATTLIST bean id CDATA #IMPLIED>

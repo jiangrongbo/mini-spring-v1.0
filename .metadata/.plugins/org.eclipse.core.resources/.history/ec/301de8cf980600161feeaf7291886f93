@@ -1,0 +1,11 @@
+<!ELEMENT beans (
+	description?,
+	(bean)*
+)>
+
+<!ELEMENT bean (
+	description?,
+	(property)*
+)>
+
+<!ATTLIST bean default-init-method CDATA #IMPLIED>

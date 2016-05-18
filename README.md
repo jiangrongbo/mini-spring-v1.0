@@ -101,6 +101,10 @@ Jack
 下面对源代码进行简单的说明：
 该工作空间用到的所有jar包都存放在mini-spring-libs工程下。
 mini-spring-v1.0工程为mini spring的源码，分为三个源码包，resource、java、test；resource源码包下存放所有资源文件，test源码包存放测试用例，java源码包下为核心源代码。
+
 该开源项目会长期维护，感兴趣的朋友在github上fork一下源码即可。
 
 
+2016.5.18更新：
+增加dtd校验bean配置合法性。
+修改代码兼容低版本JDK。

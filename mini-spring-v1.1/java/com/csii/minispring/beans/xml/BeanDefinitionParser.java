@@ -73,21 +73,34 @@ public class BeanDefinitionParser {
 						}
 					}
 				} catch (NoSuchMethodException e) {
-					logger.error(e.getMessage());
+					if (logger.isErrorEnabled()) {
+						logger.error(e.getMessage());
+					}
+
 				} catch (SecurityException e) {
-					logger.error(e.getMessage());
+					if (logger.isErrorEnabled()) {
+						logger.error(e.getMessage());
+					}
 				} catch (IllegalAccessException e) {
-					logger.error(e.getMessage());
+					if (logger.isErrorEnabled()) {
+						logger.error(e.getMessage());
+					}
 				} catch (IllegalArgumentException e) {
-					logger.error(e.getMessage());
+					if (logger.isErrorEnabled()) {
+						logger.error(e.getMessage());
+					}
 				} catch (InvocationTargetException e) {
-					logger.error(e.getMessage());
+					if (logger.isErrorEnabled()) {
+						logger.error(e.getMessage());
+					}
 				}
 			}
 			beanMap.put(beanId, bean);
 
 		} catch (ClassNotFoundException e) {
-			logger.error(e.getMessage());
+			if (logger.isErrorEnabled()) {
+				logger.error(e.getMessage());
+			}
 		}
 
 	}

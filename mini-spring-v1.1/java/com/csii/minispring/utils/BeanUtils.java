@@ -36,7 +36,7 @@ public abstract class BeanUtils {
 		} catch (IllegalArgumentException ex) {
 			throw new BeansException(ctor.getDeclaringClass(), "Illegal arguments for constructor", ex);
 		} catch (InvocationTargetException ex) {
-			throw new BeansException(ctor.getDeclaringClass(), "Constructor threw exception", ex.getTargetException());
+			throw new BeansException(ctor.getDeclaringClass(), "Constructor throw exception", ex.getTargetException());
 		}
 	}
 }

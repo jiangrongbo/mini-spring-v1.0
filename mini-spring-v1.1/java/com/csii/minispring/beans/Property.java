@@ -1,7 +1,7 @@
 package com.csii.minispring.beans;
 
 /**
- * used to describe the property config of bean.
+ * used to describe the property config information of bean.
  * 
  * @author CSII Rongbo
  * 

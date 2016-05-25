@@ -17,9 +17,7 @@ public abstract class StringUtils {
 	 * @return ,setter method name.
 	 */
 	public static String prop2SetMethodName(String prop) {
-		if (prop == null || "".equals(prop)) {
-			throw new IllegalArgumentException("prop must not be null or empty.");
-		}
+		AssertUtils.notEmpty(prop, "prop must not be null or empty.");
 		StringBuilder builder = new StringBuilder(prop);
 		builder.setCharAt(0, Character.toUpperCase(builder.charAt(0)));
 		return "set" + builder.toString();

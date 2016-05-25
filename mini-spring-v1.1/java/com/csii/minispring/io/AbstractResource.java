@@ -7,34 +7,25 @@ public abstract class AbstractResource implements Resource {
 	@Override
 	public boolean exists() { 
 		throw new UnsupportedOperationException();
-		//return false;
 	}
 
 	@Override
 	public boolean isReadable() {
-		// TODO Auto-generated method stub
-		//return false;
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public boolean isOpen() {
-		// TODO Auto-generated method stub
-		//return false;
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public long lastModified() throws IOException {
-		// TODO Auto-generated method stub
-		//return 0;
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public String getFilename() {
-		// TODO Auto-generated method stub
-		//return null;
 		throw new UnsupportedOperationException();
 	}
  

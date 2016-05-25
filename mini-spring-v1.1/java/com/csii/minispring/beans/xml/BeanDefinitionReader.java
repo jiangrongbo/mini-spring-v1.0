@@ -10,6 +10,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -31,6 +33,7 @@ import com.csii.minispring.io.Resource;
 public class BeanDefinitionReader {
 	private Resource configResource;
 	private Map<String, BeanDefinition> beanDefinitionMap;
+	private Log logger = LogFactory.getLog(BeanDefinitionReader.class);
 
 	public Resource getConfigResource() {
 		return configResource;
@@ -69,6 +72,7 @@ public class BeanDefinitionReader {
 				}
 
 				public void warning(SAXParseException exception) throws SAXException {
+					logger.warn(exception.getMessage());
 				}
 			});
 			Document doc = dBuilder.parse(configResource.getFile());
@@ -79,11 +83,17 @@ public class BeanDefinitionReader {
 				doLoadBeanDefinition(node);
 			}
 		} catch (SAXException e) {
-			e.printStackTrace();
+			if (logger.isErrorEnabled()) {
+				logger.error(e.getMessage());
+			}
 		} catch (ParserConfigurationException e) {
-
+			if (logger.isErrorEnabled()) {
+				logger.error(e.getMessage());
+			}
 		} catch (IOException e) {
-
+			if (logger.isErrorEnabled()) {
+				logger.error(e.getMessage());
+			}
 		}
 	}
 
@@ -120,7 +130,6 @@ public class BeanDefinitionReader {
 				}
 			}
 			props.add(prop);
-
 		}
 		return props;
 	}

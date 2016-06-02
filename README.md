@@ -109,8 +109,8 @@ mini-spring-v1.0工程为mini spring的源码，分为三个源码包，resource
 该开源项目会长期维护，感兴趣的朋友在github上fork一下源码即可。
 
 
-2016.5.18更新：
-增加dtd校验bean配置合法性。
-修改代码兼容低版本JDK。
+2016.5.18更新：增加dtd校验bean配置合法性。修改代码兼容低版本JDK。
 
 2016.5.25跟新：提取ApplicationContext接口，新增FileSystemApplicationContext，支持重文件系统读取bean的配置文件，同时规范化日志输出代码。
+
+2016.6.2更新：新增BeansDtdResolver解析DTD文件，同时对代码进行优化。

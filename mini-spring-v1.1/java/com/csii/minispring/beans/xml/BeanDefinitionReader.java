@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import com.csii.minispring.beans.BeanDefinition;
-import com.csii.minispring.beans.Property;
+import com.csii.minispring.beans.PropertyDefinition;
 import com.csii.minispring.io.Resource;
 
 /**
@@ -32,7 +32,8 @@ import com.csii.minispring.io.Resource;
  */
 public class BeanDefinitionReader {
 	private Resource configResource;
-	private Map<String, BeanDefinition> beanDefinitionMap;
+	private HashMap<String, BeanDefinition> beanDefinitionMap;
+	private BeansDtdResolver dtdResolver = null;
 	private Log logger = LogFactory.getLog(BeanDefinitionReader.class);
 
 	public Resource getConfigResource() {
@@ -46,22 +47,17 @@ public class BeanDefinitionReader {
 	public BeanDefinitionReader(Resource configResource) {
 		this.configResource = configResource;
 		this.beanDefinitionMap = new HashMap<String, BeanDefinition>();
+		this.dtdResolver = new BeansDtdResolver();
 	}
 
-	public Map<String, BeanDefinition> getBeanDefinitionMap() {
-		return beanDefinitionMap;
-	}
-
-	public void setBeanDefinitionMap(Map<String, BeanDefinition> beanDefinitionMap) {
-		this.beanDefinitionMap = beanDefinitionMap;
-	}
-
-	public void readBeanDefiniton() {
+	public Map readBeanDefiniton() {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		dbFactory.setValidating(true);
 		DocumentBuilder dBuilder;
 		try {
 			dBuilder = dbFactory.newDocumentBuilder();
+			//resolve dtd location
+			dBuilder.setEntityResolver(dtdResolver);
 			dBuilder.setErrorHandler(new ErrorHandler() {
 				public void error(SAXParseException exception) throws SAXException {
 					throw exception;
@@ -75,6 +71,7 @@ public class BeanDefinitionReader {
 					logger.warn(exception.getMessage());
 				}
 			});
+			
 			Document doc = dBuilder.parse(configResource.getFile());
 			doc.getDocumentElement().normalize();
 			NodeList nodeList = doc.getElementsByTagName("bean");
@@ -95,27 +92,29 @@ public class BeanDefinitionReader {
 				logger.error(e.getMessage());
 			}
 		}
+		
+		return beanDefinitionMap;
 	}
 
-	public void doLoadBeanDefinition(Node node) {
+	private void doLoadBeanDefinition(Node node) {
 		BeanDefinition beanDefinition = new BeanDefinition();
 		if (node.getNodeType() == Node.ELEMENT_NODE) {
 			Element element = (Element) node;
-			String beanId = element.getAttribute("id");
-			beanDefinition.setId(beanId);
+			String idAttr = element.getAttribute("id");
+			beanDefinition.setId(idAttr);
 			beanDefinition.setClassName(element.getAttribute("class"));
 			beanDefinition.setProperties(getProperties(element));
-			beanDefinitionMap.put(beanId, beanDefinition);
+			beanDefinitionMap.put(idAttr, beanDefinition);
 		}
 
 	}
 
 	private List getProperties(Element node) {
 
-		List<Property> props = new ArrayList<Property>();
+		List<PropertyDefinition> props = new ArrayList<PropertyDefinition>();
 		NodeList nodeList = node.getElementsByTagName("property");
 		for (int i = 0; i < nodeList.getLength(); i++) {
-			Property prop = new Property();
+			PropertyDefinition prop = new PropertyDefinition();
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element) nodeList.item(i);
 				prop.setPropName(element.getAttribute("name"));

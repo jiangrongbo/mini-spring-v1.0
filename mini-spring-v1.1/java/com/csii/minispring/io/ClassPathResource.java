@@ -11,7 +11,6 @@ import com.csii.minispring.utils.ClassUtils;
 import com.csii.minispring.utils.StringUtils;
 
 public class ClassPathResource extends AbstractResource {
-	private final String path;
 
 	private ClassLoader classLoader;
 
@@ -22,7 +21,7 @@ public class ClassPathResource extends AbstractResource {
 	}
 
 	public ClassPathResource(String path, ClassLoader classLoader) {
-		AssertUtils.notNull(path, "Path must not be null");
+		AssertUtils.notEmpty(path, "path must not be null or empty.");
 		if (path.startsWith("/")) {
 			path = path.substring(1);
 		}
@@ -31,22 +30,22 @@ public class ClassPathResource extends AbstractResource {
 	}
 
 	public ClassPathResource(String path, Class clazz) {
-		AssertUtils.notNull(path, "Path must not be null");
+		AssertUtils.notEmpty(path, "path must not be null or empty.");
 		this.path = StringUtils.cleanPath(path);
 		this.clazz = clazz;
 	}
 
 	public InputStream getInputStream() throws IOException {
-		InputStream is = null;
+		InputStream inputStream = null;
 		if (this.clazz != null) {
-			is = this.clazz.getResourceAsStream(this.path);
+			inputStream = this.clazz.getResourceAsStream(this.path);
 		} else {
-			is = this.classLoader.getResourceAsStream(this.path);
+			inputStream = this.classLoader.getResourceAsStream(this.path);
 		}
-		if (is == null) {
+		if (inputStream == null) {
 			throw new FileNotFoundException(getDescription() + " cannot be opened because it does not exist");
 		}
-		return is;
+		return inputStream;
 	}
 
 	@Override
@@ -60,9 +59,5 @@ public class ClassPathResource extends AbstractResource {
 		return new File(fileLocation.getFile());
 	}
 
-	@Override
-	public String getDescription() {
-		return "class path resource [" + this.path + "]";
-	}
 
 }

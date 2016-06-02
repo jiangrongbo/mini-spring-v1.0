@@ -46,6 +46,6 @@ public abstract class ClassUtils {
 			}
 		}
 		// not found set method, throw this exception.
-		throw new NoSuchMethodException();
+		throw new NoSuchMethodException("method name:" + methodName);
 	}
 }

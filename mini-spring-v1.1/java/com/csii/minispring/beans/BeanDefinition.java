@@ -11,7 +11,7 @@ import java.util.List;
 public class BeanDefinition {
 	private String id;
 	private String className;
-	private List<Property> properties;
+	private List<PropertyDefinition> properties;
 
 	public String getId() {
 		return id;
@@ -29,11 +29,11 @@ public class BeanDefinition {
 		this.className = className;
 	}
 
-	public List<Property> getProperties() {
+	public List<PropertyDefinition> getProperties() {
 		return properties;
 	}
 
-	public void setProperties(List<Property> properties) {
+	public void setProperties(List<PropertyDefinition> properties) {
 		this.properties = properties;
 	}
 

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans SYSTEM "beans.dtd">
 <beans >
 	<!-- 测试注入字面量 -->
 	<bean id="person1" class="com.csii.test.pojo.Person">

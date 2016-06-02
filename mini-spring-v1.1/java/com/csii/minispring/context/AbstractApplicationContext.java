@@ -1,6 +1,5 @@
 package com.csii.minispring.context;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import com.csii.minispring.beans.xml.BeanDefinitionParser;
@@ -10,9 +9,8 @@ import com.csii.minispring.io.Resource;
 
 public abstract class AbstractApplicationContext implements ApplicationContext {
 	protected Resource configResource;
-	BeanDefinitionReader reader = null;
-	BeanDefinitionParser parser = null;
-	Map<String, Object> beanMap = new HashMap<String, Object>();
+	Map beanDefinationMap = null;
+	Map<String, Object> beanMap = null;
 
 	public void refresh() {
 		loadBeanDefinitions();
@@ -28,13 +26,15 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
 	}
 
 	public void loadBeanDefinitions() {
-		reader = new BeanDefinitionReader(configResource);
-		reader.readBeanDefiniton();
+		// read bean definiton.
+		BeanDefinitionReader reader = new BeanDefinitionReader(configResource);
+		beanDefinationMap = reader.readBeanDefiniton();
 	}
 
 	public void parseBeanDefinitions() {
-		parser = new BeanDefinitionParser();
-		parser.parseBeanDefinitions(beanMap, reader);
+		// parse bean definiton, initialize bean.
+		BeanDefinitionParser parser = new BeanDefinitionParser();
+		beanMap = parser.parseBeanDefinitions(beanDefinationMap);
 	}
 
 	public Object getBean(String beanName) {

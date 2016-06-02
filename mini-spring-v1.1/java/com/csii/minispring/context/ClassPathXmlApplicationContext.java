@@ -10,13 +10,12 @@ import com.csii.minispring.io.ClassPathResource;
  */
 public class ClassPathXmlApplicationContext extends AbstractApplicationContext {
 
+	public ClassPathXmlApplicationContext() {
+	}
+	
 	public ClassPathXmlApplicationContext(String configLocation) {
 		this.configResource = new ClassPathResource(configLocation);
 		refresh();
-	}
-
-	public void setConfigResource(ClassPathResource configResource) {
-		this.configResource = configResource;
 	}
 
 }
